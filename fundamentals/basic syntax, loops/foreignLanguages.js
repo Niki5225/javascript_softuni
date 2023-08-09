@@ -1,19 +1,11 @@
-function languageCheck(country){
-    switch (country) {
-        case "USA":
-        case "England":
-            console.log("English");
-            break;
-        case "Spain":
-        case "Argentina":
-        case "Mexico":
-            console.log("Spanish");
-            break;
-        default:
-            console.log("unknown");
-            break;
-        
+function foreignLanguages(country) {
+    if (country === 'USA' || country === 'England'){
+        console.log('English');
+    } else if (country === 'Spain' || country === 'Mexico' || country === 'Argentina') {
+        console.log('Spanish');
+    } else {
+        console.log('unknown');
     }
 }
 
-languageCheck("Spain")
+foreignLanguages('Spain');

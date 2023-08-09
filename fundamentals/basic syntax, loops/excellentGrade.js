@@ -1,9 +1,9 @@
-function checkGradeIfExcellent(number){
-    if (number >= 5.50){
-        console.log("Excellent")
+function excellentGrade(grade) {
+    if (grade >= 5.5) {
+        console.log('Excellent');
     } else {
-        console.log("Not excellent")
+        console.log('Not excellent');
     }
 }
 
-checkGradeIfExcellent(5.5)
+excellentGrade(5.4)
