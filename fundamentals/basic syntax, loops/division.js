@@ -1,21 +1,23 @@
-function divisionChecker(number){
-    let result = null;
-    if (number % 10 === 0){
-        result = 10;
-    } else if (number % 7 === 0){
-        result = 7;
-    } else if (number % 6 === 0){
-        result = 6;
-    } else if (number % 3 === 0){
-        result = 3;
-    } else if (number % 2 === 0){
-        result = 2;
+function division(number) {
+    let divisible = undefined;
+
+    if (number % 10 === 0) {
+        divisible = 10;
+    } else if (number % 7 === 0) {
+        divisible = 7;
+    } else if (number % 6 === 0) {
+        divisible = 6;
+    } else if (number % 3 === 0) {
+        divisible = 3;
+    } else if (number % 2 === 0) {
+        divisible = 2;
     }
 
-    if (result === null){
-        console.log("Not divisible");
+    if (divisible === undefined) {
+        console.log('Not divisible');
     } else {
-        console.log(`The number is divisible by ${result}`)
+        console.log(`The number is divisible by ${divisible}`);
     }
 }
-divisionChecker(76543211)
+
+division(10);

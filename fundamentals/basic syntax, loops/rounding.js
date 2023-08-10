@@ -1,8 +1,13 @@
-function parse_nums(number, fixation){
-    if (fixation > 15){
-        fixation = 15
+function rounding(number, precision) {
+    if (precision > 15){
+        precision = 15;
     }
-    let result = number.toFixed(fixation)
-    console.log(parseFloat(result))
+    let fixedNum = number.toFixed(precision);
+
+    console.log(parseFloat(fixedNum));
+
 }
-parse_nums(10.5, 3)
+
+rounding(
+    3.1415926535897932384626433832795, 16
+)

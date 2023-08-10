@@ -1,7 +1,7 @@
-function multiplicationTable(number){
+function multiplicationTable(num){
     for (let i = 1; i <= 10; i++){
-        let result = number * i
-        console.log(`${number} X ${i} = ${result}`)
+        console.log(`${num} X ${i} = ${num * i}`);
     }
 }
-multiplicationTable(5)
+
+multiplicationTable(6);

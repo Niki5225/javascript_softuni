@@ -1,13 +1,17 @@
-function solve(number){
-    let counter = 0
-    let finalSum = 0
-    for (let i = 0; counter < number; i++){
-        if (i % 2 != 0){
-            counter += 1
-            console.log(i)
-            finalSum += i
+function sumOfOddNums(number) {
+    let sum = 0;
+    let counter = 0;
+    let current_num = 1;
+
+    while (counter < number) {
+        if (current_num % 2 !== 0) {
+            console.log(current_num);
+            counter++;
+            sum += current_num;
         }
+        current_num++;
     }
-    console.log(`Sum: ${finalSum}`)
+    console.log(`Sum: ${sum}`)
 }
-solve(3)
+
+sumOfOddNums(3);

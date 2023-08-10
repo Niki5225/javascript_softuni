@@ -1,20 +1,20 @@
-function login(arr){
-    let username = arr[0];
-    let len = arr.length
-    let password = username.split("").reverse().join("")
-    let counter = 0
-    for (let i = 1; i <= len; i++){
-        if (password === arr[i]){
-            console.log(`User ${username} logged in.`)
-            break;
+function login(array) {
+    let username = array[0];
+    let password = username.split('').reverse().join('');
+
+    for (let i = 1; i <= 3; i++) {
+        if (password === array[i]) {
+            console.log(`User ${username} logged in.`);
+            return
         } else {
-            counter += 1
-            if (counter === 4){
-                console.log(`User ${username} blocked!`)
-                break;
-            }
-            console.log("Incorrect password. Try again.")
+            console.log("Incorrect password. Try again.");
         }
     }
+    if (password === array[4]) {
+        console.log(`User ${username} logged in.`);
+    } else {
+        console.log(`User ${username} blocked!`);
+    }
 }
-login(["acer", "acer", "acer", "ee"])
+
+login(['sunny', 'rainy', 'cloudy', 'sunny', 'not sunny']);
