@@ -1,9 +1,11 @@
-function rightPlace(str1, char, str2){
-    let result = str1.replace("_", char)
-    if (result === str2){
-        console.log("Matched")
+function rightPlace(str, replaceItem, expectedResult) {
+    let result = str.replace('_', replaceItem);
+    if (result === expectedResult) {
+        console.log('Matched');
     } else {
-        console.log("Not Matched")
+        console.log('Not Matched');
     }
 }
-rightPlace("Str_ng", "o", "Strong")
+
+rightPlace('Str_ng', 'I',
+    'Strong');

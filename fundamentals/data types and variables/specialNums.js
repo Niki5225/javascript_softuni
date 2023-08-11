@@ -1,15 +1,16 @@
-function nums(num){
+function specialNums(num){
     for (let i = 1; i <= num; i++){
-        let number = i.toString()
-        let result = 0
-        for (let j = 0; j < number.length; j++){
-            result += Number(number[j])
+        let currentNum = i.toString()
+        let sum = 0;
+        for (let j = 0; j < currentNum.length; j++){
+            sum += Number(currentNum[j]);
         }
-        if (result === 5 || result === 7 || result === 11){
-            console.log(`${i} -> True`)
+        if (sum === 5 || sum === 7 || sum === 11){
+            console.log(`${i} -> True`);
         } else {
-            console.log(`${i} -> False`)
+            console.log(`${i} -> False`);
         }
     }
 }
-nums(15)
+
+specialNums(20);

@@ -1,14 +1,16 @@
-function tripleOfLatinLetters(number){
-    let num = Number(number);
-    for (let i = 0; i < num; i++){
-        firstLetter = String.fromCharCode(97 + i);
-        for (let j = 0; j < num; j++){
-            secondLetter = String.fromCharCode(97 + j)
-            for (let k = 0; k < num; k++){
-                thirdLetter = String.fromCharCode(97 + k)
-                console.log(`${firstLetter}${secondLetter}${thirdLetter}`)       
+function tripleOfLatinLetters(numStr){
+    let number = Number(numStr);
+
+    for (let i = 0; i < number; i++){
+        let letter1 = String.fromCharCode(97 + i);
+        for (let j = 0; j < number; j++){
+            let letter2 = String.fromCharCode(97 + j);
+            for (let k = 0; k < number; k++){
+                let letter3 = String.fromCharCode(97 + k);
+                console.log(letter1 + letter2 + letter3)
             }
         }
     }
 }
-tripleOfLatinLetters('3')
+
+tripleOfLatinLetters(3);

@@ -1,22 +1,16 @@
-function numbers(number){
-    let strNumber = number.toString()
-    let sum = 0
-    for (let i = 0; i < strNumber.length; i++){
-        sum += Number(strNumber[i]);
-    }
-    let strSum = sum.toString()
-    let result = undefined
+function amazingNumbers(num) {
+    let strOfNum = String(num);
+    let sum = 0;
 
-    if (strSum.includes("9")){
-        result = true
-    } else {
-        result = false
+    for (let i = 0; i < strOfNum.length; i++){
+        sum += Number(strOfNum[i]);
     }
 
-    if (result){
-        console.log(`${number} Amazing? True`)
+    if (sum.toString().includes('9')){
+        console.log(`${num} Amazing? True`);
     } else {
-        console.log(`${number} Amazing? False`)
+        console.log(`${num} Amazing? False`);
     }
 }
-numbers(363)
+
+amazingNumbers(9);
