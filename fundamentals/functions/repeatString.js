@@ -1,11 +1,9 @@
-function repeatString(string, times){
+function repeatString(str, number){
     let result = '';
-
-    for (let i = 0; i < times; i++){
-        result += string;
+    for (let i = 0; i < number; i++){
+        result += str;
     }
-
     return result;
 }
 
-console.log(repeatString('String', 2));
+console.log(repeatString('abc', 3));
