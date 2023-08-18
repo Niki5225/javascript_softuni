@@ -1,16 +1,19 @@
-function reception(array){
-    let [employeeEfficency1,employeeEfficency2, employeeEfficency3, studentsCount] = array;
-    let totalEfficiency = Number(employeeEfficency1) + Number(employeeEfficency2) + Number(employeeEfficency3);
+function softuniReception(array) {
+    let intArr = array.map(Number)
+    let [employeeEfficiency1, employeeEfficiency2, employeeEfficiency3, students] = intArr;
+    let hours = 0;
+    let counter = 0
 
-    let totalHoursNeeded = 0;
-
-    while (studentsCount > 0){
-        studentsCount -= totalEfficiency;
-        totalHoursNeeded += 1;
-        if (totalHoursNeeded % 4 === 0){
-            totalHoursNeeded += 1;
+    while (students > 0){
+        if (counter === 3){
+            hours++;
+            counter = 0;
+            continue;
         }
+        students -= employeeEfficiency1 + employeeEfficiency2 + employeeEfficiency3;
+        hours++;
+        counter++;
     }
-    console.log(`Time needed: ${totalHoursNeeded}h.`);
+    console.log(`Time needed: ${hours}h.`);
 }
-reception(['1','2','3','45']);
+softuniReception(['3','2','5','40']);

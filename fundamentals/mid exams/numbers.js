@@ -1,32 +1,27 @@
-function numbers(input){
-    let array = input.split(' ').map(Number);
-    let totalSum = 0;
-    let arrayOfTopNums = [];
-
-    for (let i = 0; i < array.length; i++){
-        totalSum += array[i];
+function numbers(array) {
+    let numArray = array.split(' ').map(Number);
+    let sumElements = 0;
+    for (let element of numArray) {
+        sumElements += element;
     }
+    let average = sumElements / numArray.length;
+    let greaterThanAverage = [];
 
-    let averageValue = totalSum / array.length;
-
-    for (let j = 0; j < array.length; j++){
-        if (array[j] > averageValue){
-            arrayOfTopNums.push(array[j]);
+    for (let element of numArray) {
+        if (element > average) {
+            greaterThanAverage.push(element);
         }
     }
-    arrayOfTopNums = arrayOfTopNums.sort((a, b) => a - b);
 
-    newArr = [];
-
-    for (let k = arrayOfTopNums.length - 1; k >= 0; k--){
-        newArr.push(arrayOfTopNums[k]);
-    }
-
-    newArr.splice(5);
-    if (newArr.length > 0){
-        console.log(newArr.join(' '));
-    } else {
+    if (greaterThanAverage.length === 0) {
         console.log('No');
+    } else {
+        greaterThanAverage.sort((a, b) => b - a);
+        let result = [];
+        for (let i = 0; i < 5; i++) {
+            result.push(greaterThanAverage[i]);
+        }
+        console.log(result.join(' '));
     }
 }
 
