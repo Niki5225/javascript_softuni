@@ -1,22 +1,22 @@
-function storage(array){
-    let dict = {};
+function storage(input){
+    let items = new Map();
 
-    for (let element of array){
-        let [item, quantity] = element.split(' ');
-        if (dict.hasOwnProperty(item)){
-            dict[item] += Number(quantity);
+    for (let element of input){
+        let [product, quantity] = element.split(' ');
+        if (items.has(product)){
+            items.set(product, items.get(product) + Number(quantity));
         } else {
-            dict[item] = Number(quantity);
+            items.set(product, Number(quantity));
         }
     }
 
-    for (let [key, value] of Object.entries(dict)){
+    for (let [key, value] of items.entries()){
         console.log(`${key} -> ${value}`);
     }
 }
 
 storage(['apple 50',
-'apple 61',
-'coffee 115',
-'coffee 40']
-);
+    'apple 61',
+    'coffee 115',
+    'coffee 40']
+)

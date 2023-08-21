@@ -1,29 +1,21 @@
-function adressBook(array){
-    let dict = {};
+function addressBook(input) {
+    let assocArr = {};
 
-    for (let element of array){
+    for (let element of input) {
         let [key, value] = element.split(':');
-        dict[key] = value;
+        assocArr[key] = value;
     }
 
-    let entries = Object.entries(dict);
+    let sortedArr = Object.entries(assocArr).sort((a, b) =>
+        a[0].localeCompare(b[0])
+    );
 
-    let sortedAssocArr = entries.sort((a, b) => a[0].localeCompare(b[0]));
-
-    for (let el of sortedAssocArr){
-        console.log(`${el[0]} -> ${el[1]}`);
+    for (let [key, value] of sortedArr){
+        console.log(`${key} -> ${value}`);
     }
 }
 
-adressBook(['Bob:Huxley Rd',
-'John:Milwaukee Crossing',
-'Peter:Fordem Ave',
-'Bob:Redwing Ave',
-'George:Mesta Crossing',
-'Ted:Gateway Way',
-'Bill:Gateway Way',
-'John:Grover Rd',
-'Peter:Huxley Rd',
-'Jeff:Gateway Way',
-'Jeff:Huxley Rd']
-);
+addressBook(['Tim:Doe Crossing',
+    'Bill:Nelson Place',
+    'Peter:Carlyle Ave',
+    'Bill:Ornery Rd'])

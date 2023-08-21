@@ -1,24 +1,23 @@
-function meetings(array){
-    let dict = {};
+function meetings(input){
+    let assocArr = {};
 
-    for (let element of array){
-        let [key, value] = element.split(' ');
-        if (dict.hasOwnProperty(key)){
-            console.log(`Conflict on ${key}!`)
+    for (let element of input){
+        let [day, person] = element.split(' ');
+        if (assocArr.hasOwnProperty(day)){
+            console.log(`Conflict on ${day}!`);
         } else {
-            dict[key] = value;
-            console.log(`Scheduled for ${key}`);
+            assocArr[day] = person;
+            console.log(`Scheduled for ${day}`);
         }
     }
 
-    for (let [key, value] of Object.entries(dict)){
+    for (let [key, value] of Object.entries(assocArr)){
         console.log(`${key} -> ${value}`);
     }
-
 }
 
 meetings(['Monday Peter',
-'Wednesday Bill',
-'Monday Tim',
-'Friday Tim']
+    'Wednesday Bill',
+    'Monday Tim',
+    'Friday Tim']
 );
